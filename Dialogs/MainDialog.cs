@@ -55,6 +55,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 
         private async Task<DialogTurnResult> ActStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
+            var thankYouMessageText = "";
             if (!_cluRecognizer.IsConfigured)
             {
                 // CLU is not configured, we just run the MoodDialog path with an empty BookingDetailsInstance.
@@ -68,9 +69,16 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             switch (cluResult.GetTopIntent().intent)
             {
                 case MoodAnalyser.Intent.Happy:
-                    var thankYouMessageText = $"Thank you (intent was {cluResult.GetTopIntent().intent})";
-                    var thankYouMessage = MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput);
-                    await stepContext.Context.SendActivityAsync(thankYouMessage, cancellationToken);
+                    thankYouMessageText = $"Thank you (intent was {cluResult.GetTopIntent().intent})";
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
+                    break;
+                case MoodAnalyser.Intent.Sad:
+                    thankYouMessageText = $"Thank you (intent was {cluResult.GetTopIntent().intent})";
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
+                    break;
+                case MoodAnalyser.Intent.Neutral:
+                    thankYouMessageText = $"Thank you (intent was {cluResult.GetTopIntent().intent})";
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
                     break;
                 default:
                     var didntUnderstandMessageText = $"Sorry, I didn't get that. Please try asking in a different way (intent was {cluResult.GetTopIntent().intent})";
