@@ -1,0 +1,52 @@
+﻿{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "body": [
+      {
+          "type": "TextBlock",
+          "size": "Medium",
+          "weight": "Bolder",
+          "text": "Welcome to cheer me up",
+          "horizontalAlignment": "Center"
+      },
+      {
+          "type": "ColumnSet",
+          "columns": [
+              {
+                  "type": "Column",
+                  "items": [
+                      {
+                          "type": "TextBlock",
+                          "weight": "Bolder",
+                          "text": "How you are feeling today?",
+                          "wrap": true
+                      }
+                  ],
+                  "width": "stretch"
+              }
+          ]
+      },
+      {
+          "type": "ImageSet",
+          "imageSize": "Large",
+          "images": [
+              {
+                  "type": "Image",
+                  "size": "small",
+                  "url": ""
+              },
+              {
+                  "type": "Image",
+                  "size": "small",
+                  "url":""
+              },
+              {
+                  "type": "Image",
+                  "size": "small",
+                  "url":""
+              }
+          ]
+      }
+  ],
+  "version": "1.0"
+}
