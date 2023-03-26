@@ -19,6 +19,7 @@ namespace Microsoft.BotBuilderSamples
         {
             Happy,
             Neutral,
+            Sad,
             None
         }
 
@@ -28,7 +29,7 @@ namespace Microsoft.BotBuilderSamples
 
         public Dictionary<Intent, IntentScore> Intents { get; set; }
 
-        public CluEntities Entities { get; set; }
+        // public CluEntities Entities { get; set; }
 
         public IDictionary<string, object> Properties { get; set; }
 
@@ -40,7 +41,7 @@ namespace Microsoft.BotBuilderSamples
             Text = app.Text;
             AlteredText = app.AlteredText;
             Intents = app.Intents;
-            Entities = app.Entities;
+            // Entities = app.Entities;
             Properties = app.Properties;
         }
 
@@ -60,13 +61,13 @@ namespace Microsoft.BotBuilderSamples
             return (maxIntent, max);
         }
 
-        public class CluEntities
-        {
-            public CluEntity[] Entities;
+        // public class CluEntities
+        // {
+        //     public CluEntity[] Entities;
 
-            public CluEntity[] GetFeelingList() => Entities.Where(e => e.Category == "feeling").ToArray();
+        //     public CluEntity[] GetFeelingList() => Entities.Where(e => e.Category == "feeling").ToArray();
 
-            public string GetFeeling() => GetFeelingList().FirstOrDefault()?.Text;
-        }
+        //     public string GetFeeling() => GetFeelingList().FirstOrDefault()?.Text;
+        // }
     }
 }

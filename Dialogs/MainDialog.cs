@@ -2,8 +2,12 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using CoreBotCLU.Interfaces;
+using CoreBotCLU.Models;
+using CoreBotCLU.Models.Requests;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
@@ -16,13 +20,15 @@ namespace Microsoft.BotBuilderSamples.Dialogs
     {
         private readonly MoodRecognizer _cluRecognizer;
         protected readonly ILogger Logger;
+        private readonly ITextGenerationService _textGenerationService;
 
         // Dependency injection uses this constructor to instantiate MainDialog
-        public MainDialog(MoodRecognizer cluRecognizer, ILogger<MainDialog> logger)
+        public MainDialog(MoodRecognizer cluRecognizer, ILogger<MainDialog> logger, ITextGenerationService textGenerationService)
             : base(nameof(MainDialog))
         {
             _cluRecognizer = cluRecognizer;
             Logger = logger;
+            _textGenerationService = textGenerationService;
 
             AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
@@ -55,6 +61,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 
         private async Task<DialogTurnResult> ActStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
+            var thankYouMessageText = "";
             if (!_cluRecognizer.IsConfigured)
             {
                 // CLU is not configured, we just run the MoodDialog path with an empty BookingDetailsInstance.
@@ -68,9 +75,19 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             switch (cluResult.GetTopIntent().intent)
             {
                 case MoodAnalyser.Intent.Happy:
-                    var thankYouMessageText = $"Thank you (intent was {cluResult.GetTopIntent().intent})";
-                    var thankYouMessage = MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput);
-                    await stepContext.Context.SendActivityAsync(thankYouMessage, cancellationToken);
+                    var res = await _textGenerationService.GetTextCompletion(GenerateRequest("happy"));
+                    thankYouMessageText = res.Choices[0].Message.Content;
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
+                    break;
+                case MoodAnalyser.Intent.Sad:
+                    res = await _textGenerationService.GetTextCompletion(GenerateRequest("sad"));
+                    thankYouMessageText = res.Choices[0].Message.Content;
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
+                    break;
+                case MoodAnalyser.Intent.Neutral:
+                    res = await _textGenerationService.GetTextCompletion(GenerateRequest("neutral"));
+                    thankYouMessageText = res.Choices[0].Message.Content;
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
                     break;
                 default:
                     var didntUnderstandMessageText = $"Sorry, I didn't get that. Please try asking in a different way (intent was {cluResult.GetTopIntent().intent})";
@@ -100,6 +117,46 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             // Restart the main dialog with a different message the second time around
             var promptMessage = "Tell me again";
             return await stepContext.ReplaceDialogAsync(InitialDialogId, promptMessage, cancellationToken);
+        }
+
+        private TextCompletionsRequest GenerateRequest(string intent)
+        {
+            return new TextCompletionsRequest
+            {
+                Model = "gpt-3.5-turbo",
+                Temperature = 0.7,
+                Messages = new List<Message>
+                {
+                    new Message
+                    {
+                        Role = "user",
+                        Content = GetContentBasedOnIntent(intent)
+                    }
+                }
+            };
+        }
+
+        private string GetContentBasedOnIntent(string intent)
+        {
+            var st = "";
+            switch (intent)
+            {
+                case "happy":
+                    st = "Say glad to hear that";
+                    break;
+
+                case "sad":
+                    st = "Tell me a joke";
+                    break;
+                case "neutral":
+                    st = "Say wish you a good day ahead";
+                    break;
+                default:
+                    st = "Say I didn't understand you.";
+                    break;
+            }
+
+            return st;
         }
     }
 }
