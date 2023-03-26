@@ -80,6 +80,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
                     await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
                     break;
                 case MoodAnalyser.Intent.Sad:
+                    //await stepContext.Context.SendActivityAsync(MessageFactory.Text("Do you want to hear a joke", InputHints.AcceptingInput));
                     res = await _textGenerationService.GetTextCompletion(GenerateRequest("sad"));
                     thankYouMessageText = res.Choices[0].Message.Content;
                     await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
@@ -142,14 +143,14 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             switch (intent)
             {
                 case "happy":
-                    st = "Say glad to hear that";
+                    st = "Say glad to hear that and provide todays intresting facts";
                     break;
 
                 case "sad":
-                    st = "Tell me a joke";
+                    st = "Tell me a joke having atleast 20 words";
                     break;
                 case "neutral":
-                    st = "Say wish you a good day ahead";
+                    st = "Say wish you a good day ahead and provide some meditation ideas";
                     break;
                 default:
                     st = "Say I didn't understand you.";
