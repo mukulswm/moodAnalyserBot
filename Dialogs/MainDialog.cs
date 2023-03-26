@@ -80,12 +80,15 @@ namespace Microsoft.BotBuilderSamples.Dialogs
                     await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
                     break;
                 case MoodAnalyser.Intent.Sad:
-                    //await stepContext.Context.SendActivityAsync(MessageFactory.Text("Do you want to hear a joke", InputHints.AcceptingInput));
+                    var mes = "I hope below jokes will make you feel good...";
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(mes, mes, InputHints.IgnoringInput), cancellationToken);
                     res = await _textGenerationService.GetTextCompletion(GenerateRequest("sad"));
                     thankYouMessageText = res.Choices[0].Message.Content;
                     await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
                     break;
                 case MoodAnalyser.Intent.Neutral:
+                    var message = "Please go through simple meditation to enhance your mood, please wait for a while..";
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(message, message, InputHints.IgnoringInput), cancellationToken);
                     res = await _textGenerationService.GetTextCompletion(GenerateRequest("neutral"));
                     thankYouMessageText = res.Choices[0].Message.Content;
                     await stepContext.Context.SendActivityAsync(MessageFactory.Text(thankYouMessageText, thankYouMessageText, InputHints.IgnoringInput), cancellationToken);
@@ -145,11 +148,10 @@ namespace Microsoft.BotBuilderSamples.Dialogs
                 case "happy":
                     st = "Say glad to hear that and provide todays intresting facts";
                     break;
-
                 case "sad":
-                    st = "Tell me a joke having atleast 20 words";
+                    st = "Tell me some joke";
                     break;
-                case "neutral":
+               case "neutral":
                     st = "Say wish you a good day ahead and provide some meditation ideas";
                     break;
                 default:
