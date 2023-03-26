@@ -146,13 +146,13 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             switch (intent)
             {
                 case "happy":
-                    st = "Say glad to hear that";
+                    st = "Say glad to hear that and provide todays intresting facts";
                     break;
                 case "sad":
                     st = "Tell me some joke";
                     break;
-                case "neutral":
-                    st = "Give some a meditation exercise";
+               case "neutral":
+                    st = "Say wish you a good day ahead and provide some meditation ideas";
                     break;
                 default:
                     st = "Say I didn't understand you.";
