@@ -22,175 +22,213 @@
             },
             {
                 "category": "Happy"
-            }
-        ],
-        "entities": [
+            },
             {
-                "category": "feeling",
-                "compositionSetting": "combineComponents"
+                "category": "Sad"
             }
         ],
+        "entities": [],
         "utterances": [
             {
-                "text": "Cheered up",
+                "text": "I am feeling wonderful",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 10
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "Cheer up",
+                "text": "I am wonderful",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 8
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "Over the moon",
+                "text": "I am feeling great",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 13
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "Happy go lucky",
+                "text": "I am dull",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am feeling blissful",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 14
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "On Cloud Nine",
+                "text": "I am at bliss",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 13
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "On Top of the World",
+                "text": "I am overjoyed ",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 19
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "good",
+                "text": "I am satisfied",
                 "language": "en-us",
-                "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 4
-                    }
-                ],
+                "intent": "Happy",
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "alright",
+                "text": "I am feeling gloomy",
                 "language": "en-us",
-                "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 7
-                    }
-                ],
+                "intent": "Sad",
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "well",
+                "text": "I am heartsick",
                 "language": "en-us",
-                "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 4
-                    }
-                ],
+                "intent": "Sad",
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "I am well",
+                "text": "I am feeling dejected",
                 "language": "en-us",
-                "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 4
-                    }
-                ],
+                "intent": "Sad",
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "I am doing well",
+                "text": "I am feeling uneasy",
                 "language": "en-us",
-                "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 11,
-                        "length": 4
-                    }
-                ],
+                "intent": "Sad",
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "I am okay",
+                "text": "I am feeling blue",
                 "language": "en-us",
-                "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 4
-                    }
-                ],
+                "intent": "Sad",
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "okay",
+                "text": "I am down",
                 "language": "en-us",
-                "intent": "Neutral",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am feeling low",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am hopeless",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am disappointed",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am sorrowful",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am worried",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am upset",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am miserable",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am depressed",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am unhappy",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am heartbroken",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am feeling bad",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am not okay",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am not ok",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am sad",
+                "language": "en-us",
+                "intent": "Sad",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am not feeling well",
+                "language": "en-us",
+                "intent": "Sad",
                 "entities": [],
                 "dataset": "Train"
             },
@@ -198,299 +236,182 @@
                 "text": "I am alright",
                 "language": "en-us",
                 "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 7
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "I am good",
+                "text": "Cheered up",
+                "language": "en-us",
+                "intent": "Happy",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Cheer up",
+                "language": "en-us",
+                "intent": "Happy",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Over the moon",
+                "language": "en-us",
+                "intent": "Happy",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Happy go lucky",
+                "language": "en-us",
+                "intent": "Happy",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "On Cloud Nine",
+                "language": "en-us",
+                "intent": "Happy",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "On Top of the World",
+                "language": "en-us",
+                "intent": "Happy",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am well",
                 "language": "en-us",
                 "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 4
-                    }
-                ],
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am doing well",
+                "language": "en-us",
+                "intent": "Neutral",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I am okay",
+                "language": "en-us",
+                "intent": "Neutral",
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am great",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 5
-                    }
-                ],
-                "dataset": "Train"
-            },
-            {
-                "text": "great ",
-                "language": "en-us",
-                "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 5
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am the most happiest ",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 14,
-                        "length": 8
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am feeling happy",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 13,
-                        "length": 5
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "Lighthearted",
+                "text": "I am elated",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 12
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "Festive",
+                "text": "I am jubilant",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 7
-                    }
-                ],
-                "dataset": "Train"
-            },
-            {
-                "text": "Elated",
-                "language": "en-us",
-                "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 6
-                    }
-                ],
-                "dataset": "Train"
-            },
-            {
-                "text": "Jubilant",
-                "language": "en-us",
-                "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 8
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am the best",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 8
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am fabulous",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 8
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "Joyful",
+                "text": "I am very joyful",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 6
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "Ecstatic",
+                "text": "I am ecstatic",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 8
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "Cheerful",
+                "text": "I am cheerful",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 8
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am awesome",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 7
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am happy",
                 "language": "en-us",
                 "intent": "Happy",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 5
-                    }
-                ],
-                "dataset": "Train"
-            },
-            {
-                "text": "Neutral",
-                "language": "en-us",
-                "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 7
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am Neutral",
                 "language": "en-us",
                 "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 7
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am fine",
                 "language": "en-us",
                 "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 5,
-                        "length": 4
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
-                "text": "fine",
+                "text": "I am ok",
                 "language": "en-us",
                 "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 4
-                    }
-                ],
-                "dataset": "Train"
-            },
-            {
-                "text": "ok",
-                "language": "en-us",
-                "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 0,
-                        "length": 2
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             },
             {
                 "text": "I am feeling ok",
                 "language": "en-us",
                 "intent": "Neutral",
-                "entities": [
-                    {
-                        "category": "feeling",
-                        "offset": 13,
-                        "length": 2
-                    }
-                ],
+                "entities": [],
                 "dataset": "Train"
             }
         ]
